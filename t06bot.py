@@ -7,13 +7,13 @@ import asyncio
 from telethon import events
 from help import *
 c = requests.session()
-bot_username = '@zmmbot'
+bot_username = '@t06bot'
 
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.بوت المليار"))
 async def _(event):
     if ispay[0] == "yes":
-        await event.edit(zmmbot)
+        await event.edit(t06bot)
     else:
         await event.edit("يجب الدفع لاستعمال هذا الامر !")
 
@@ -23,12 +23,12 @@ async def _(event):
     if ispay[0] == "yes":
         await event.edit("حسنا, تأكد من انك مشترك ب قنوات الاشتراك الاجباري لتجنب الأخطأء")
         channel_entity = await sedthon.get_entity(bot_username)
-        await sedthon.send_message('@zmmbot', '/start')
+        await sedthon.send_message('@t06bot', '/start')
         await asyncio.sleep(10)
-        msg0 = await sedthon.get_messages('@zmmbot', limit=1)
+        msg0 = await sedthon.get_messages('@t06bot', limit=1)
         await msg0[0].click(2)
         await asyncio.sleep(10)
-        msg1 = await sedthon.get_messages('@zmmbot', limit=1)
+        msg1 = await sedthon.get_messages('@t06bot', limit=1)
         await msg1[0].click(0)
 
         chs = 1
